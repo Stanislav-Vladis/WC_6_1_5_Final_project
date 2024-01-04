@@ -1,8 +1,10 @@
 :root {
-  --base-width: 320px;
-  --base-height: 100%;
+  --base-width: 768px;
+  --base-height: 504px;
   --main-headline-height: 64px;
   --main-headline-margin-bottom: 24px;
+  --main__brands-swiper-wrapper-repeat-width: 224px;
+  --main__brands-swiper-wrapper-gap: 16px;
 }
 
 html {
@@ -10,45 +12,42 @@ html {
   background: #FFF;
 }
 
-.main__slider {
-  width: calc(100% - 16px);
-  padding-top: 16px;
-  padding-left: 16px;
-  align-self: flex-end;
-  background-color: #F8F8F8;
+body {
+  margin: 0;
 }
 
-.main__swiper {
-  width: 100%;
+
+.main__show-all {
+  @media all and (max-width: 991px) {
+    margin-left: calc(((100% - var(--base-width)) / 2) + 30px);
+  }
+  @media all and (min-width: 992px) and (max-width: 1120px) {
+    margin-left: calc(((100% - var(--base-width) - var(--main__brands-swiper-wrapper-repeat-width)) / 2) + 20px);
+  }
 }
 
 
 /* Заголовок страницы */
 .header__burger,
-.header__logo {
+.header__burger + .header__divider,
+.main__menu-header-logo {
   margin-right: auto;
 }
 
+.header__call,
+.header__chat,
+.header__profile,
+.header__profile + .header__divider,
 .header__repair,
-.header__divider + .header__repair,
 .header__checkStatus {
   margin-left: auto;
 }
 
-.header__close,
-.header__search,
-.header__call,
-.header__chat,
-.header__profile {
-  display: none;
-}
-
-.header__close + .header__divider {
-  display: none;
-}
-
 .header.menu__active .header__burger,
 .header.menu__active .header__divider,
+.header.menu__active .header__call,
+.header.menu__active .header__chat,
+.header.menu__active .header__profile,
 .header.menu__active .header__repair,
 .header.menu__active .header__checkStatus {
   display: none;
@@ -171,19 +170,25 @@ li.main__pagination-item {
 /* Блок с статьями */
 .main__article {
   display: flex;
+}
+
+.main__article-textWrapper {
+  display: flex;
   flex-direction: column;
 }
 
 .main__article-text {
-  padding: 0 16px 16px 16px;
+  padding: 0 48px 16px 16px;
 }
 
 p.main__article-text {
   color: #1B1C21;
   font-size: 14px;
+  font-style: normal;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 20px;
   letter-spacing: 0.2px;
+  margin: 0;
 }
 
 .main__article-read-more {
@@ -208,64 +213,63 @@ p.main__article-text {
 }
 
 .main__article-img {
-  width: 100%;
-  margin: 0;
-}
-
-
-/* Переопределение стилей Swiper */
-.swiper-pagination-bullet {
-  width: 16px !important;
-  height: 16px !important;
-  background-color: #B5B6BC !important;
+  width: 360px;
+  margin: 0 25px 25px 25px;
 }
 
 
 /* Ремонтируемые бренды */
 .main__brands {
-  height: 160px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: #F8F8F8;
 }
 
 .main__brands-fade {
-  z-index: 2;
-  height: 74px;
+  display: none;
 }
 
-.main__brands-label {
-  width: 224px;
-  height: 72px;
-}
-
-/* Дополнение к стилям Swiper для брендов */
 .main__brands-swiper {
-  height: 120px;
+  width: 100%;
+  margin-bottom: 16px;
 }
 
-.main__brands-swiper-slide.main__brands-swiper-slide-disable {
-  display: none;
+.main__brands-swiper-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, var(--main__brands-swiper-wrapper-repeat-width));
+  gap: var(--main__brands-swiper-wrapper-gap);
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+  @media all and (max-width: 1120px) {
+    height: 180px;
+  }
 }
 
-.main__brands-swiper-pagination {
-  left: -16px !important;
+.main__brands-swiper-wrapper.main__brands-show-all_enable {
+  height: 100%;
 }
 
-.main__show-all {
-  display: none;
+.main__show-all.main__brands-show-all_enable .main__show-all-img {
+  transform: rotate(180deg);
 }
 
 
 /* Ремонтируемые техники */
 .main__equipment {
-  height: 230px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: #F8F8F8;
 }
 
 .main__equipment-fade {
-  z-index: 2;
-  height: 160px;
+  display: none;
 }
 
 .main__equipment-label {
-  width: 240px;
+  width: 220px;
   height: 160px;
 }
 
@@ -281,47 +285,83 @@ p.main__article-text {
   margin: auto 0 0 auto;
 }
 
-/* Дополнение к стилям Swiper для ремонтируемых техник */
 .main__equipment-swiper {
-  height: 210px;
+  width: 100%;
+  margin-bottom: 16px;
 }
 
-.main__equipment-swiper-slide.main__equipment-swiper-slide-disable {
-  display: none;
+.main__equipment-swiper-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, var(--main__brands-swiper-wrapper-repeat-width));
+  gap: var(--main__brands-swiper-wrapper-gap);
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+  @media all and (max-width: 1120px) {
+    height: 175px;
+  }
 }
 
-.main__equipment-swiper-pagination {
-  left: -16px !important;
+.main__equipment-swiper-wrapper.main__equipment-show-all_enable {
+  height: 100%;
+}
+
+.main__show-all.main__equipment-show-all_enable .main__show-all-img {
+  transform: rotate(180deg);
 }
 
 
 /* Цены на услуги */
-.main__price {
-  height: 260px;
-}
-
-.main__price-fade {
-  z-index: 2;
-  height: 200px;
+.main__price-swiper-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .main__price-label {
-  display: flex;
-  flex-direction: column;
-  width: 260px;
-  height: 200px;
+  position: relative;
+  border: none;
+  border-radius: 0;
+}
+
+.main__price-label::before,
+.main__price-label::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 0;
+  height: 1px;
+  background-color: #EAEAEA;
+}
+
+.main__price-swiper-slide:nth-child(1) .main__price-label::before,
+.main__price-swiper-slide:nth-child(1) .main__price-label::after {
+  height: 0;
+}
+
+.main__price-swiper-slide:last-child .main__price-label::before,
+.main__price-swiper-slide:last-child .main__price-label::after {
+  height: 0;
+}
+
+.main__price-swiper-slide:nth-child(1) .main__price-label {
+  border-radius: 6px 6px 0 0;
+}
+
+.main__price-swiper-slide:last-child .main__price-label {
+  border-bottom: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.main__price-swiper-wrapper .main__price-swiper-slide:nth-child(1) .main__price-label {
+  background-color: #f8f8f8;
+  border: none;
+  padding: 0 16px;
 }
 
 .main__price-header-service {
-  color: #7E7E82;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16px;
-  opacity: 0.7218;
-  margin: 0 0 6px;
-}
-
-.main__price-swiper-wrapper .main__price-swiper-slide:nth-child(1) {
   display: none;
 }
 
@@ -331,21 +371,44 @@ p.main__article-text {
   font-weight: 400;
   line-height: 18px;
   letter-spacing: 0.2px;
-  margin: 0 0 12px;
+  margin: auto auto auto 0;
 }
 
-
-/* Дополнение к стилям Swiper для цен на услуги */
-.main__price-swiper {
-  height: 260px;
+.main__price-swiper-wrapper .main__price-swiper-slide:nth-child(1) .main__price-header-service {
+  display: block;
+  color: #7E7E82;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  margin-right: auto;
 }
 
-.main__price-swiper-slide.main__price-swiper-slide-disable {
-  display: none;
+.main__price-swiper-wrapper .main__price-swiper-slide:nth-child(1) .main__price-header-service:nth-child(1) {
+  min-width: 348px;
 }
 
-.main__price-swiper-pagination {
-  left: -16px !important;
+.main__price-swiper-wrapper .main__price-swiper-slide:nth-child(1) .main__price-header-service:nth-child(2) {
+  min-width: 60px;
+}
+
+.main__price-swiper-wrapper .main__price-swiper-slide:nth-child(1) .main__price-header-service:nth-child(3) {
+  min-width: 200px;
+}
+
+.main__description-of-service:nth-child(2) {
+  min-width: 348px;
+}
+
+.main__description-of-service:nth-child(4) {
+  min-width: 60px;
+}
+
+.main__description-of-service:nth-child(6) {
+  min-width: 90px;
+}
+
+.main__selected-action-button {
+  margin: auto 0;
 }
 
 
@@ -357,6 +420,7 @@ p.main__article-text {
 }
 
 .main__nds-description-text {
+  width: 420px;
   color: #1B1C21;
   font-size: 14px;
   font-style: normal;
@@ -370,7 +434,7 @@ p.main__article-text {
   border: none;
   background-color: #F8F8F8;
   cursor: pointer;
-  width: 200px;
+  width: 320px;
   flex-shrink: 0;
 }
 
@@ -395,7 +459,6 @@ p.main__article-text {
 /* Футер */
 .footer {
   display: flex;
-  flex-direction: column;
   color: #7E7E82;
   text-align: center;
   font-size: 14px;
@@ -406,5 +469,12 @@ p.main__article-text {
 }
 
 .footer__text {
-  margin: 0 0 16px;
+  margin: 16px auto 32px 0;
+  text-align: left;
+}
+
+.footer__text:nth-child(3) {
+  width: 214px;
+  margin: 16px 0 32px 0;
+  text-align: right;
 }

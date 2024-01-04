@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/general-style.css">
   <link rel="stylesheet" media="all and (max-width: 768.00px)" href="css/swiper-bundle.min.css" />
   <link rel="stylesheet" media="all and (max-width: 768.00px)" href="css/mobile-style.css">
+  <link rel="stylesheet" media="all and (min-width: 768.02px) and (max-width: 1120.00px)" href="css/laptop-style.css">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
@@ -99,9 +100,9 @@
       <div class="main__article-textWrapper">
         <p class="main__article-text">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
         <p class="main__article-text">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.</p>
-      </div>
-      <div class="main__article-read-more">
-        <a href="#">Читать далее</a>
+        <div class="main__article-read-more">
+          <a href="#">Читать далее</a>
+        </div>
       </div>
       <!--<img class="main__article-img" src="https://www.spirumania.ru/images/MG_3223.jpg" alt="Фото-превью статьи">-->
       <img class="main__article-img" src="img/MG_3223.png" alt="Фото-превью статьи">
@@ -115,7 +116,7 @@
     <div class="main__slider main__brands">
       <div class="main__fade main__brands-fade"></div>
       <div class="swiper main__swiper main__brands-swiper">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper main__brands-swiper-wrapper">
           <div class="swiper-slide main__brands-swiper-slide">
             <div class="main__label main__brands-label lenovo-label">
               <button class="main__button main__brands-button">
@@ -196,10 +197,10 @@
         </div>
         <div class="swiper-pagination main__brands-swiper-pagination"></div>
       </div>
-    </div>
-    <div class="main__brands-show-all">
-      <div class="main__brands-show-all-img"></div>
-      <button class="main__brands-show-all-button">Показать все</button>
+      <div class="main__show-all main__brands-show-all">
+        <div class="main__show-all-img"></div>
+        <button class="main__show-all-button">Показать все</button>
+      </div>
     </div>
 
     <div class="block-divider"></div>
@@ -210,7 +211,7 @@
     <div class="main__slider main__equipment">
       <div class="main__fade main__equipment-fade"></div>
       <div class="swiper main__swiper main__equipment-swiper">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper main__equipment-swiper-wrapper">
           <div class="swiper-slide main__equipment-swiper-slide">
             <div class="main__label main__equipment-label">
               <p class="main__equipment-label-text">Ремонт ноутбуков</p>
@@ -302,6 +303,10 @@
         </div>
         <div class="swiper-pagination main__equipment-swiper-pagination"></div>
       </div>
+      <div class="main__show-all main__equipment-show-all">
+        <div class="main__show-all-img"></div>
+        <button class="main__show-all-button">Показать все</button>
+      </div>
     </div>
 
     <div class="block-divider"></div>
@@ -312,13 +317,48 @@
     <div class="main__slider main__price">
       <div class="main__fade main__price-fade"></div>
       <div class="swiper main__swiper main__price-swiper">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper main__price-swiper-wrapper">
           <div class="swiper-slide main__price-swiper-slide">
             <div class="main__label main__price-label">
               <h3 class="main__price-header-service">Ремонтные услуги</h3>
-              <p class="main__description-of-service">Тестирование с выдачей технического заключения</p>
+              <h3 class="main__price-header-service">Цена</h3>
+              <h3 class="main__price-header-service">Срок</h3>
+            </div>
+          </div>
+          <div class="swiper-slide main__price-swiper-slide">
+            <div class="main__label main__price-label">
+              <h3 class="main__price-header-service">Ремонтные услуги</h3>
+              <p class="main__description-of-service">Диагностика</p>
               <h3 class="main__price-header-service">Цена</h3>
               <p class="main__description-of-service">Бесплатно</p>
+              <h3 class="main__price-header-service">Срок</h3>
+              <p class="main__description-of-service">30 мин</p>
+              <button class="main__selected-action-button main__selected-action-button">
+                <p class="main__selected-action-button-text">Заказать</p>
+                <div class="main__button-arrow main__selected-action-arrow"></div>
+              </button>
+            </div>
+          </div>
+          <div class="swiper-slide main__price-swiper-slide">
+            <div class="main__label main__price-label">
+              <h3 class="main__price-header-service">Ремонтные услуги</h3>
+              <p class="main__description-of-service">Замена дисплея</p>
+              <h3 class="main__price-header-service">Цена</h3>
+              <p class="main__description-of-service">1000 ₽</p>
+              <h3 class="main__price-header-service">Срок</h3>
+              <p class="main__description-of-service">30-120 мин</p>
+              <button class="main__selected-action-button main__selected-action-button">
+                <p class="main__selected-action-button-text">Заказать</p>
+                <div class="main__button-arrow main__selected-action-arrow"></div>
+              </button>
+            </div>
+          </div>
+          <div class="swiper-slide main__price-swiper-slide">
+            <div class="main__label main__price-label">
+              <h3 class="main__price-header-service">Ремонтные услуги</h3>
+              <p class="main__description-of-service">Замена полифонического динамика</p>
+              <h3 class="main__price-header-service">Цена</h3>
+              <p class="main__description-of-service">1000 ₽</p>
               <h3 class="main__price-header-service">Срок</h3>
               <p class="main__description-of-service">30-120 мин</p>
               <button class="main__selected-action-button main__selected-action-button">
@@ -332,7 +372,7 @@
               <h3 class="main__price-header-service">Ремонтные услуги</h3>
               <p class="main__description-of-service">Тестирование с выдачей технического заключения</p>
               <h3 class="main__price-header-service">Цена</h3>
-              <p class="main__description-of-service">Бесплатно</p>
+              <p class="main__description-of-service">1000 ₽</p>
               <h3 class="main__price-header-service">Срок</h3>
               <p class="main__description-of-service">30-120 мин</p>
               <button class="main__selected-action-button main__selected-action-button">
@@ -344,37 +384,9 @@
           <div class="swiper-slide main__price-swiper-slide">
             <div class="main__label main__price-label">
               <h3 class="main__price-header-service">Ремонтные услуги</h3>
-              <p class="main__description-of-service">Тестирование с выдачей технического заключения</p>
+              <p class="main__description-of-service">Замена программного обеспечения</p>
               <h3 class="main__price-header-service">Цена</h3>
-              <p class="main__description-of-service">Бесплатно</p>
-              <h3 class="main__price-header-service">Срок</h3>
-              <p class="main__description-of-service">30-120 мин</p>
-              <button class="main__selected-action-button main__selected-action-button">
-                <p class="main__selected-action-button-text">Заказать</p>
-                <div class="main__button-arrow main__selected-action-arrow"></div>
-              </button>
-            </div>
-          </div>
-          <div class="swiper-slide main__price-swiper-slide">
-            <div class="main__label main__price-label">
-              <h3 class="main__price-header-service">Ремонтные услуги</h3>
-              <p class="main__description-of-service">Тестирование с выдачей технического заключения</p>
-              <h3 class="main__price-header-service">Цена</h3>
-              <p class="main__description-of-service">Бесплатно</p>
-              <h3 class="main__price-header-service">Срок</h3>
-              <p class="main__description-of-service">30-120 мин</p>
-              <button class="main__selected-action-button main__selected-action-button">
-                <p class="main__selected-action-button-text">Заказать</p>
-                <div class="main__button-arrow main__selected-action-arrow"></div>
-              </button>
-            </div>
-          </div>
-          <div class="swiper-slide main__price-swiper-slide">
-            <div class="main__label main__price-label">
-              <h3 class="main__price-header-service">Ремонтные услуги</h3>
-              <p class="main__description-of-service">Тестирование с выдачей технического заключения</p>
-              <h3 class="main__price-header-service">Цена</h3>
-              <p class="main__description-of-service">Бесплатно</p>
+              <p class="main__description-of-service">1000 ₽</p>
               <h3 class="main__price-header-service">Срок</h3>
               <p class="main__description-of-service">30-120 мин</p>
               <button class="main__selected-action-button main__selected-action-button">
@@ -387,6 +399,7 @@
         <div class="swiper-pagination main__price-swiper-pagination"></div>
       </div>
     </div>
+
     <div class="main__nds-description">
       <p class="main__nds-description-text">
         Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для получения коммерческого предложения на постоянное обслуживание, оставьте заявку.
@@ -402,8 +415,7 @@
     <div class="block-divider"></div>
 
     <footer class="footer">
-      <p class="footer__text">© 2019 CPS</p>
-      <p class="footer__text">Разработано командой Apesong</p>
+      <p class="footer__text">© 2019 CPS<br>Разработано командой Apesong</p>
       <p class="footer__text">Политика конфиденциальности</p>
       <p class="footer__text">Информация, размещенная на данной странице, не является публичной офертой</p>
     </footer>
@@ -413,8 +425,8 @@
   <script src="js/menu/interactive-menu.js"></script>
   <script src="js/pagination/interactive-pagination.js"></script>
   <script src="js/article/cropping-article-text.js"></script>
-  <script type="module" src="js/brands/hide-extra-brands.js"></script>
   <script type="module" src="js/brands/show-all-brands.js"></script>
+  <script type="module" src="js/equipment/show-all-equipment.js"></script>
   <script src="js/swiper/swiper-bundle.min.js"></script>
   <script src="js/swiper/initialize-swiper.js"></script>
 </body>
