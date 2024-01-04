@@ -13,7 +13,8 @@ headerBurgerButton.addEventListener('click', function () {
 document.addEventListener('click', function (event) {
   if (mainMenu.classList.contains(CLASS_NAME_ACTIVE) &&
     !headerBurgerButton.contains(event.target) &&
-    !mainMenu.contains(event.target) ||
+    !mainMenu.contains(event.target) &&
+    window.innerWidth < 1120 ||
     event.target === closeButton) {
     header.classList.remove(CLASS_NAME_ACTIVE);
     mainMenu.classList.remove(CLASS_NAME_ACTIVE);

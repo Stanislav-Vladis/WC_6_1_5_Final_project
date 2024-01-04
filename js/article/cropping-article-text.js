@@ -7,6 +7,7 @@ let innerTextFromArticle;
 
 if (window.innerWidth <= 768) textLimit = textLimitTo768px;
 if (window.innerWidth <= 1120) textLimit = textLimitTo1120px;
+if (window.innerWidth > 1120) textLimit = 500
 
 articleText.forEach(function (elem) {
   innerTextFromArticle = elem.innerText;
