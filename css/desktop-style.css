@@ -164,7 +164,7 @@ body {
   flex-wrap: wrap;
   height: 40px;
   align-items: center;
-  margin: 0 0 70px 32px;
+  margin: 0 0 70px 0;
 }
 
 .main__pagination::-webkit-scrollbar {
