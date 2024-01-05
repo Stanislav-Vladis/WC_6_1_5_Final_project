@@ -68,6 +68,23 @@ html {
 }
 
 
+/* Обратная связь и обратный звонок */
+.feedback,
+.back-call {
+  height: 100%;
+}
+
+.feedback__close,
+.back-call__close {
+  margin-top: 8px;
+}
+
+.feedback.feedback__active .feedback__close,
+.back-call.back-call__active .back-call__close {
+  display: block;
+}
+
+
 /* Основной контент */
 .menu.menu__active + .main {
   display: none;

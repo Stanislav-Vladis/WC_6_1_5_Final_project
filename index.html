@@ -35,6 +35,44 @@
     <button class="header__button header__checkStatus"></button>
   </header>
 
+  <div class="feedback">
+    <button class="feedback__button feedback__close"></button>
+    <div class="feedback__headline">
+      <div class="feedback__headline-highlight"></div>
+      <h1>Обратная связь</h1>
+    </div>
+    <form class="feedback__form">
+      <label for="name"></label>
+      <input class="feedback__form-input" type="text" id="name" name="name" placeholder="Имя" required>
+      <label for="phone"></label>
+      <input class="feedback__form-input" type="tel" id="phone" name="phone" placeholder="Телефон" required>
+      <label for="email"></label>
+      <input class="feedback__form-input" type="email" id="email" name="email" placeholder="Электронная почта" required>
+      <label for="message"></label>
+      <textarea class="feedback__form-textarea" id="message" name="message" rows="4" placeholder="Сообщение" required></textarea>
+      <p class="feedback__form-consent-to-processing-personal-data">Нажимая “отправить”, вы даете согласие на <a href="#">обработку персональных данных</a> и соглашаетесь с нашей <a href="#">политикой конфиденциальности</a></p>
+      <button class="main__selected-action-button feedback__button" type="submit">
+        <p class="main__selected-action-button-text">Отправить</p>
+        <div class="main__button-arrow main__selected-action-arrow"></div>
+      </button>
+    </form>
+  </div>
+  <div class="back-call">
+    <button class="back-call__button back-call__close"></button>
+    <div class="back-call__headline">
+      <div class="back-call__headline-highlight"></div>
+      <h1>Заказать звонок</h1>
+    </div>
+    <form class="back-call__form">
+      <label for="back-call-phone"></label>
+      <input class="back-call__form-input" type="tel" id="back-call-phone" name="phone" placeholder="Телефон" required>
+      <p class="back-call__form-consent-to-processing-personal-data">Нажимая “отправить”, вы даете согласие на <a href="#">обработку персональных данных</a> и соглашаетесь с нашей <a href="#">политикой конфиденциальности</a></p>
+      <button class="main__selected-action-button back-call__button" type="submit">
+        <p class="main__selected-action-button-text">Отправить</p>
+        <div class="main__button-arrow main__selected-action-arrow"></div>
+      </button>
+    </form>
+  </div>
   <div class="menu">
     <ul class="menu__list">
       <li><a href="#1">Ремонт техники</a></li>
@@ -334,7 +372,7 @@
               <p class="main__description-of-service">Бесплатно</p>
               <h3 class="main__price-header-service">Срок</h3>
               <p class="main__description-of-service">30 мин</p>
-              <button class="main__selected-action-button main__selected-action-button">
+              <button class="main__selected-action-button">
                 <p class="main__selected-action-button-text">Заказать</p>
                 <div class="main__button-arrow main__selected-action-arrow"></div>
               </button>
@@ -348,7 +386,7 @@
               <p class="main__description-of-service">1000 ₽</p>
               <h3 class="main__price-header-service">Срок</h3>
               <p class="main__description-of-service">30-120 мин</p>
-              <button class="main__selected-action-button main__selected-action-button">
+              <button class="main__selected-action-button">
                 <p class="main__selected-action-button-text">Заказать</p>
                 <div class="main__button-arrow main__selected-action-arrow"></div>
               </button>
@@ -362,7 +400,7 @@
               <p class="main__description-of-service">1000 ₽</p>
               <h3 class="main__price-header-service">Срок</h3>
               <p class="main__description-of-service">30-120 мин</p>
-              <button class="main__selected-action-button main__selected-action-button">
+              <button class="main__selected-action-button">
                 <p class="main__selected-action-button-text">Заказать</p>
                 <div class="main__button-arrow main__selected-action-arrow"></div>
               </button>
@@ -376,7 +414,7 @@
               <p class="main__description-of-service">1000 ₽</p>
               <h3 class="main__price-header-service">Срок</h3>
               <p class="main__description-of-service">30-120 мин</p>
-              <button class="main__selected-action-button main__selected-action-button">
+              <button class="main__selected-action-button">
                 <p class="main__selected-action-button-text">Заказать</p>
                 <div class="main__button-arrow main__selected-action-arrow"></div>
               </button>
@@ -390,7 +428,7 @@
               <p class="main__description-of-service">1000 ₽</p>
               <h3 class="main__price-header-service">Срок</h3>
               <p class="main__description-of-service">30-120 мин</p>
-              <button class="main__selected-action-button main__selected-action-button">
+              <button class="main__selected-action-button">
                 <p class="main__selected-action-button-text">Заказать</p>
                 <div class="main__button-arrow main__selected-action-arrow"></div>
               </button>
@@ -424,6 +462,8 @@
 
   <script type="module" src="js/utils/utils.js"></script>
   <script src="js/menu/interactive-menu.js"></script>
+  <script src="js/menu/interactive-feedback.js"></script>
+  <script src="js/menu/interactive-back-call.js"></script>
   <script src="js/pagination/interactive-pagination.js"></script>
   <script src="js/article/cropping-article-text.js"></script>
   <script type="module" src="js/brands/show-all-brands.js"></script>

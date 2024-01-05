@@ -38,6 +38,10 @@ body {
   z-index: 1;
 }
 
+.header.menu__active-opacity {
+  opacity: 0.0395;
+}
+
 .header__burger,
 .header__burger + .header__divider,
 .main__menu-header-logo {
@@ -77,9 +81,32 @@ body {
 }
 
 
+/* Обратная связь и обратный звонок */
+.feedback,
+.back-call {
+  height: 100%;
+}
+
+.feedback__close,
+.back-call__close {
+  margin-top: 8px;
+}
+
+.feedback.feedback__active .feedback__close,
+.back-call.back-call__active .back-call__close {
+  display: block;
+  margin-left: -90px !important;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+
 /* Меню */
 .menu {
   left: auto;
+}
+
+.menu.menu__active-opacity {
+  opacity: 0.0395;
 }
 
 
@@ -90,6 +117,10 @@ body {
   min-height: var(--base-height);
   background: #F8F8F8;
   margin-left: var(--menu-width);
+}
+
+.main.menu__active-opacity {
+  opacity: 0.0395;
 }
 
 .main__headline {
