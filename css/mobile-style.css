@@ -100,11 +100,8 @@ html {
   /* Горизонтальное меню */
   /* Блок с статьями */
   /* Ремонтируемые бренды */
-  /* Дополнение к стилям Swiper для брендов */
   /* Ремонтируемые техники */
-  /* Дополнение к стилям Swiper для ремонтируемых техник */
   /* Цены на услуги */
-  /* Дополнение к стилям Swiper для цен на услуги */
   /* Описание НДС */
 }
 .main .main__headline {
@@ -145,24 +142,17 @@ html {
   list-style: none;
   padding: 0;
 }
-.main .main__pagination::-webkit-scrollbar {
-  display: none;
-}
-.main .main__pagination-item {
+.main .main__pagination .main__pagination-item {
   height: 36px;
   white-space: nowrap;
   margin-left: 16px;
 }
-.main .main__pagination-item.main__pagination-item--active {
+.main .main__pagination .main__pagination-item.main__pagination-item--active {
   border-radius: 6px;
   border: 2px solid #B8FFEC;
   background: white;
 }
-.main .main__pagination-fade {
-  height: 40px;
-  margin-top: 88px;
-}
-.main .main__pagination-button {
+.main .main__pagination .main__pagination-item .main__pagination-button {
   width: 100%;
   height: 100%;
   display: flex;
@@ -178,11 +168,18 @@ html {
   letter-spacing: -0.2px;
   padding: 0 15px 0 15px;
 }
+.main .main__pagination::-webkit-scrollbar {
+  display: none;
+}
+.main .main__pagination-fade {
+  height: 40px;
+  margin-top: 88px;
+}
 .main .main__article {
   display: flex;
   flex-direction: column;
 }
-.main .main__article-text {
+.main .main__article .main__article-text {
   color: #1B1C21;
   font-size: 14px;
   font-weight: 400;
@@ -190,7 +187,7 @@ html {
   letter-spacing: 0.2px;
   padding: 0 16px 16px 16px;
 }
-.main .main__article-read-more {
+.main .main__article .main__article-read-more {
   display: flex;
   height: 24px;
   margin-left: 16px;
@@ -201,7 +198,7 @@ html {
   background-repeat: no-repeat;
   background-position: left center;
 }
-.main .main__article-read-more a {
+.main .main__article .main__article-read-more a {
   color: #1B1C21;
   font-weight: 500;
   line-height: 24px;
@@ -209,77 +206,93 @@ html {
   margin-left: 8px;
   text-decoration: none;
 }
-.main .main__article-img {
+.main .main__article .main__article-img {
   width: 100%;
   margin: 0;
 }
 .main .main__brands {
   height: 160px;
+  /* Дополнение к стилям Swiper для брендов */
 }
-.main .main__brands-fade {
+.main .main__brands .main__brands-fade {
   z-index: 2;
   height: 74px;
 }
-.main .main__brands-label {
+.main .main__brands .main__brands-swiper {
+  height: 120px;
+}
+.main .main__brands .main__brands-swiper .main__brands-label {
   width: 224px;
   height: 72px;
 }
-.main .main__brands-swiper {
-  height: 120px;
-}
-.main .main__brands-swiper-slide.main__brands-swiper-slide-disable {
+.main .main__brands .main__brands-swiper .main__brands-swiper-slide.main__brands-swiper-slide-disable {
   display: none;
 }
-.main .main__brands-swiper-pagination {
+.main .main__brands .main__brands-swiper .main__brands-swiper-pagination {
   left: -16px !important;
 }
-.main .main__show-all {
+.main .main__brands .main__show-all {
   display: none;
 }
 .main .main__equipment {
   height: 230px;
+  /* Дополнение к стилям Swiper для ремонтируемых техник */
 }
-.main .main__equipment-fade {
+.main .main__equipment .main__equipment-fade {
   z-index: 2;
   height: 160px;
 }
-.main .main__equipment-label {
+.main .main__equipment .main__equipment-swiper {
+  height: 210px;
+}
+.main .main__equipment .main__equipment-swiper .main__equipment-swiper-slide .main__equipment-label {
   width: 240px;
   height: 160px;
 }
-.main .main__equipment-label-text {
+.main .main__equipment .main__equipment-swiper .main__equipment-swiper-slide .main__equipment-label .main__equipment-label-text {
   color: #1B1C21;
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -0.2px;
   margin: 0;
 }
-.main .main__equipment-button {
+.main .main__equipment .main__equipment-swiper .main__equipment-swiper-slide .main__equipment-label .main__equipment-button {
   margin: auto 0 0 auto;
 }
-.main .main__equipment-swiper {
-  height: 210px;
-}
-.main .main__equipment-swiper-slide .main__equipment-swiper-slide-disable {
+.main .main__equipment .main__equipment-swiper .main__equipment-swiper-slide .main__equipment-swiper-slide-disable {
   display: none;
 }
-.main .main__equipment-swiper-pagination {
+.main .main__equipment .main__equipment-swiper .main__equipment-swiper-pagination {
   left: -16px !important;
+}
+.main .main__equipment .main__show-all {
+  display: none;
 }
 .main .main__price {
   height: 260px;
+  /* Дополнение к стилям Swiper для цен на услуги */
 }
-.main .main__price-fade {
-  z-index: 2;
-  height: 200px;
+.main .main__price .main__price-swiper {
+  height: 260px;
 }
-.main .main__price-label {
+.main .main__price .main__price-swiper .main__price-swiper-wrapper .main__price-swiper-slide:nth-child(1) {
+  display: none;
+}
+.main .main__price .main__price-swiper .main__price-swiper-slide .main__price-label {
   display: flex;
   flex-direction: column;
   width: 260px;
   height: 200px;
 }
-.main .main__price-header-service {
+.main .main__price .main__price-swiper .main__price-swiper-slide .main__price-label .main__description-of-service {
+  color: #1B1C21;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  margin: 0 0 auto;
+}
+.main .main__price .main__price-swiper .main__price-swiper-slide .main__price-label .main__price-header-service {
   color: #7E7E82;
   font-size: 14px;
   font-weight: 500;
@@ -287,32 +300,22 @@ html {
   opacity: 0.7218;
   margin: 0 0 6px;
 }
-.main .main__price-swiper-wrapper .main__price-swiper-slide:nth-child(1) {
+.main .main__price .main__price-swiper .main__price-swiper-slide .main__price-swiper-slide-disable {
   display: none;
 }
-.main .main__description-of-service {
-  color: #1B1C21;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 0.2px;
-  margin: 0 0 12px;
-}
-.main .main__price-swiper {
-  height: 260px;
-}
-.main .main__price-swiper-slide .main__price-swiper-slide-disable {
-  display: none;
-}
-.main .main__price-swiper-pagination {
+.main .main__price .main__price-swiper .main__price-swiper-pagination {
   left: -16px !important;
+}
+.main .main__price .main__price-fade {
+  z-index: 2;
+  height: 200px;
 }
 .main .main__nds-description {
   display: flex;
   flex-direction: column;
   margin: 16px 16px 50px;
 }
-.main .main__nds-description-text {
+.main .main__nds-description .main__nds-description-text {
   color: #1B1C21;
   font-size: 14px;
   font-style: normal;
@@ -320,7 +323,7 @@ html {
   line-height: 20px;
   letter-spacing: 0.2px;
 }
-.main .main__nds-description-button {
+.main .main__nds-description .main__nds-description-button {
   display: flex;
   border: none;
   background-color: #F8F8F8;
@@ -328,7 +331,7 @@ html {
   width: 200px;
   flex-shrink: 0;
 }
-.main .main__nds-description-button-text {
+.main .main__nds-description .main__nds-description-button .main__nds-description-button-text {
   width: 100%;
   text-align: left;
   color: #1B1C21;
@@ -338,7 +341,7 @@ html {
   letter-spacing: -0.2px;
   margin: 0;
 }
-.main .main__nds-description-arrow {
+.main .main__nds-description .main__nds-description-button .main__nds-description-button-text .main__nds-description-arrow {
   display: inline-block;
   margin-top: auto;
   margin-bottom: auto;
