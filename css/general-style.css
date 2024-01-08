@@ -130,6 +130,7 @@ html {
 body {
   margin: 0;
   align-self: flex-end;
+  overflow-x: hidden;
 }
 
 

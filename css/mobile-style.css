@@ -1,15 +1,13 @@
-:root {
-  --base-width: 320px;
-  --base-height: 100%;
-  --main-headline-height: 64px;
-  --main-headline-margin-bottom: 24px;
-}
-
+@charset "UTF-8";
+/* Root variables */
+/* Color variables */
+/* Root variables */
 html {
-  min-width: var(--base-width);
-  background: #FFF;
+  min-width: 320px;
+  background: white;
 }
 
+/* Слайдер swiper */
 .main__slider {
   width: calc(100% - 16px);
   padding-top: 16px;
@@ -17,107 +15,104 @@ html {
   align-self: flex-end;
   background-color: #F8F8F8;
 }
-
-.main__swiper {
+.main__slider .main__swiper {
   width: 100%;
 }
 
+/* Переопределение стилей Swiper */
+.swiper-pagination-bullet {
+  width: 16px !important;
+  height: 16px !important;
+  background-color: #B5B6BC !important;
+}
 
 /* Заголовок страницы */
-.header__burger,
-.header__logo {
+.header .header__burger,
+.header .header__logo {
   margin-right: auto;
 }
-
-.header__repair,
-.header__divider + .header__repair,
-.header__checkStatus {
+.header .header__repair,
+.header .header__divider + .header__repair,
+.header .header__checkStatus {
   margin-left: auto;
 }
-
-.header__close,
-.header__search,
-.header__call,
-.header__chat,
-.header__profile {
+.header .header__close,
+.header .header__search,
+.header .header__call,
+.header .header__chat,
+.header .header__profile {
   display: none;
 }
-
-.header__close + .header__divider {
+.header .header__close + .header__divider {
   display: none;
 }
-
-.header.menu__active .header__burger,
-.header.menu__active .header__divider,
-.header.menu__active .header__repair,
-.header.menu__active .header__checkStatus {
-  display: none;
-}
-
-.header.menu__active .header__close,
-.header.menu__active .header__search {
-  display: block;
-}
-
-.header__divider {
+.header .header__divider {
   width: 2px;
   height: 32px;
   flex-shrink: 0;
   border-radius: 1px;
   background: #EAEAEA;
 }
-
+.header.menu__active .header__burger,
+.header.menu__active .header__divider,
+.header.menu__active .header__repair,
+.header.menu__active .header__checkStatus {
+  display: none;
+}
+.header.menu__active .header__close,
+.header.menu__active .header__search {
+  display: block;
+}
 
 /* Обратная связь и обратный звонок */
-.feedback,
+.feedback {
+  height: 100%;
+}
+.feedback .feedback__close {
+  margin-top: 8px;
+}
+.feedback.feedback__active .feedback__close {
+  display: block;
+}
+
 .back-call {
   height: 100%;
 }
-
-.feedback__close,
-.back-call__close {
+.back-call .back-call__close {
   margin-top: 8px;
 }
-
-.feedback.feedback__active .feedback__close,
 .back-call.back-call__active .back-call__close {
   display: block;
 }
 
-
-/* Основной контент */
+/* Меню */
 .menu.menu__active + .main {
   display: none;
 }
 
+/* Основной контент */
 .main {
   display: flex;
   flex-direction: column;
-  min-height: var(--base-height);
+  min-height: 100%;
   background: #F8F8F8;
+  /* Заголовок основного блока */
+  /* Горизонтальное меню */
+  /* Блок с статьями */
+  /* Ремонтируемые бренды */
+  /* Дополнение к стилям Swiper для брендов */
+  /* Ремонтируемые техники */
+  /* Дополнение к стилям Swiper для ремонтируемых техник */
+  /* Цены на услуги */
+  /* Дополнение к стилям Swiper для цен на услуги */
+  /* Описание НДС */
 }
-
-.main__headline {
+.main .main__headline {
   display: flex;
-  height: var(--main-headline-height);
-  margin-bottom: var(--main-headline-margin-bottom);
+  height: 64px;
+  margin-bottom: 24px;
 }
-
-.main__headline-highlight {
-  align-self: flex-end;
-  flex: 0 0 4px;
-  height: 40px;
-  background: #41F6D7;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-.main__headline-repair,
-.main__headline-checkStatus {
-  display: none;
-}
-
-.main__headline h1 {
+.main .main__headline h1 {
   align-self: flex-end;
   flex: 1;
   margin: 0 16px 0 16px;
@@ -127,8 +122,19 @@ html {
   line-height: 40px;
   letter-spacing: -0.6px;
 }
-
-.main__pagination {
+.main .main__headline-highlight {
+  align-self: flex-end;
+  flex: 0 0 4px;
+  height: 40px;
+  background: #41F6D7;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.main .main__headline-repair,
+.main .main__headline-checkStatus {
+  display: none;
+}
+.main .main__pagination {
   display: flex;
   height: 40px;
   align-items: center;
@@ -136,29 +142,27 @@ html {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  list-style: none;
+  padding: 0;
 }
-
-.main__pagination::-webkit-scrollbar {
+.main .main__pagination::-webkit-scrollbar {
   display: none;
 }
-
-.main__pagination-item {
+.main .main__pagination-item {
   height: 36px;
   white-space: nowrap;
+  margin-left: 16px;
 }
-
-.main__pagination-fade {
-  height: 40px;
-  margin-top: calc(var(--main-headline-height) + var(--main-headline-margin-bottom));
-}
-
-.main__pagination-item.main__pagination-item--active {
+.main .main__pagination-item.main__pagination-item--active {
   border-radius: 6px;
   border: 2px solid #B8FFEC;
-  background: #FFF;
+  background: white;
 }
-
-.main__pagination-button {
+.main .main__pagination-fade {
+  height: 40px;
+  margin-top: 88px;
+}
+.main .main__pagination-button {
   width: 100%;
   height: 100%;
   display: flex;
@@ -174,36 +178,19 @@ html {
   letter-spacing: -0.2px;
   padding: 0 15px 0 15px;
 }
-
-ul.main__pagination {
-  list-style: none;
-  padding: 0;
-}
-
-li.main__pagination-item {
-  margin-left: 16px;
-}
-
-
-/* Блок с статьями */
-.main__article {
+.main .main__article {
   display: flex;
   flex-direction: column;
 }
-
-.main__article-text {
-  padding: 0 16px 16px 16px;
-}
-
-p.main__article-text {
+.main .main__article-text {
   color: #1B1C21;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
   letter-spacing: 0.2px;
+  padding: 0 16px 16px 16px;
 }
-
-.main__article-read-more {
+.main .main__article-read-more {
   display: flex;
   height: 24px;
   margin-left: 16px;
@@ -214,8 +201,7 @@ p.main__article-text {
   background-repeat: no-repeat;
   background-position: left center;
 }
-
-.main__article-read-more a {
+.main .main__article-read-more a {
   color: #1B1C21;
   font-weight: 500;
   line-height: 24px;
@@ -223,113 +209,77 @@ p.main__article-text {
   margin-left: 8px;
   text-decoration: none;
 }
-
-.main__article-img {
+.main .main__article-img {
   width: 100%;
   margin: 0;
 }
-
-
-/* Переопределение стилей Swiper */
-.swiper-pagination-bullet {
-  width: 16px !important;
-  height: 16px !important;
-  background-color: #B5B6BC !important;
-}
-
-
-/* Ремонтируемые бренды */
-.main__brands {
+.main .main__brands {
   height: 160px;
 }
-
-.main__brands-fade {
+.main .main__brands-fade {
   z-index: 2;
   height: 74px;
 }
-
-.main__brands-label {
+.main .main__brands-label {
   width: 224px;
   height: 72px;
 }
-
-/* Дополнение к стилям Swiper для брендов */
-.main__brands-swiper {
+.main .main__brands-swiper {
   height: 120px;
 }
-
-.main__brands-swiper-slide.main__brands-swiper-slide-disable {
+.main .main__brands-swiper-slide.main__brands-swiper-slide-disable {
   display: none;
 }
-
-.main__brands-swiper-pagination {
+.main .main__brands-swiper-pagination {
   left: -16px !important;
 }
-
-.main__show-all {
+.main .main__show-all {
   display: none;
 }
-
-
-/* Ремонтируемые техники */
-.main__equipment {
+.main .main__equipment {
   height: 230px;
 }
-
-.main__equipment-fade {
+.main .main__equipment-fade {
   z-index: 2;
   height: 160px;
 }
-
-.main__equipment-label {
+.main .main__equipment-label {
   width: 240px;
   height: 160px;
 }
-
-.main__equipment-label-text {
+.main .main__equipment-label-text {
   color: #1B1C21;
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -0.2px;
   margin: 0;
 }
-
-.main__equipment-button {
+.main .main__equipment-button {
   margin: auto 0 0 auto;
 }
-
-/* Дополнение к стилям Swiper для ремонтируемых техник */
-.main__equipment-swiper {
+.main .main__equipment-swiper {
   height: 210px;
 }
-
-.main__equipment-swiper-slide.main__equipment-swiper-slide-disable {
+.main .main__equipment-swiper-slide .main__equipment-swiper-slide-disable {
   display: none;
 }
-
-.main__equipment-swiper-pagination {
+.main .main__equipment-swiper-pagination {
   left: -16px !important;
 }
-
-
-/* Цены на услуги */
-.main__price {
+.main .main__price {
   height: 260px;
 }
-
-.main__price-fade {
+.main .main__price-fade {
   z-index: 2;
   height: 200px;
 }
-
-.main__price-label {
+.main .main__price-label {
   display: flex;
   flex-direction: column;
   width: 260px;
   height: 200px;
 }
-
-.main__price-header-service {
+.main .main__price-header-service {
   color: #7E7E82;
   font-size: 14px;
   font-weight: 500;
@@ -337,12 +287,10 @@ p.main__article-text {
   opacity: 0.7218;
   margin: 0 0 6px;
 }
-
-.main__price-swiper-wrapper .main__price-swiper-slide:nth-child(1) {
+.main .main__price-swiper-wrapper .main__price-swiper-slide:nth-child(1) {
   display: none;
 }
-
-.main__description-of-service {
+.main .main__description-of-service {
   color: #1B1C21;
   font-size: 14px;
   font-weight: 400;
@@ -350,30 +298,21 @@ p.main__article-text {
   letter-spacing: 0.2px;
   margin: 0 0 12px;
 }
-
-
-/* Дополнение к стилям Swiper для цен на услуги */
-.main__price-swiper {
+.main .main__price-swiper {
   height: 260px;
 }
-
-.main__price-swiper-slide.main__price-swiper-slide-disable {
+.main .main__price-swiper-slide .main__price-swiper-slide-disable {
   display: none;
 }
-
-.main__price-swiper-pagination {
+.main .main__price-swiper-pagination {
   left: -16px !important;
 }
-
-
-/* Описание НДС */
-.main__nds-description {
+.main .main__nds-description {
   display: flex;
   flex-direction: column;
   margin: 16px 16px 50px;
 }
-
-.main__nds-description-text {
+.main .main__nds-description-text {
   color: #1B1C21;
   font-size: 14px;
   font-style: normal;
@@ -381,8 +320,7 @@ p.main__article-text {
   line-height: 20px;
   letter-spacing: 0.2px;
 }
-
-.main__nds-description-button {
+.main .main__nds-description-button {
   display: flex;
   border: none;
   background-color: #F8F8F8;
@@ -390,8 +328,7 @@ p.main__article-text {
   width: 200px;
   flex-shrink: 0;
 }
-
-.main__nds-description-button-text {
+.main .main__nds-description-button-text {
   width: 100%;
   text-align: left;
   color: #1B1C21;
@@ -401,13 +338,11 @@ p.main__article-text {
   letter-spacing: -0.2px;
   margin: 0;
 }
-
-.main__nds-description-arrow {
+.main .main__nds-description-arrow {
   display: inline-block;
   margin-top: auto;
   margin-bottom: auto;
 }
-
 
 /* Футер */
 .footer {
@@ -421,7 +356,8 @@ p.main__article-text {
   opacity: 0.7218;
   margin: 16px 16px 0;
 }
-
-.footer__text {
+.footer .footer__text {
   margin: 0 0 16px;
 }
+
+/*# sourceMappingURL=mobile-style.css.map */
