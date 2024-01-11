@@ -130,7 +130,7 @@ body {
   margin-top: 14px;
   margin-bottom: 24px;
 }
-.main .main__headline h1 {
+.main .main__headline h2 {
   align-self: center;
   flex: 1;
   margin: 0 16px 0 16px;
@@ -194,7 +194,7 @@ body {
   line-height: 24px;
   letter-spacing: -0.2px;
 }
-.main .main__headline h1 {
+.main .main__headline h2 {
   align-self: flex-end;
   flex: 1;
   margin: 0 16px 0 16px;
