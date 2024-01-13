@@ -1,8 +1,11 @@
+import { header, mainMenu } from './interactive-menu.js'
+import { main, CLASS_NAME_MENU_ACTIVE_OPACITY } from './interactive-feedback.js'
+
 const CLASS_NAME_BACK_CALL_ACTIVE = 'back-call__active';
 
 const menuFooterCallButton = document.querySelector('.menu__footer-call');
-const backCall = document.querySelector('.back-call');
-const backCallCloseButton = document.querySelector('.back-call__close');
+export const backCall = document.querySelector('.back-call');
+export const backCallCloseButton = document.querySelector('.back-call__close');
 
 menuFooterCallButton.addEventListener('click', function () {
   main.classList.add(CLASS_NAME_MENU_ACTIVE_OPACITY);

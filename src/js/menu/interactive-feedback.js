@@ -1,10 +1,12 @@
-const CLASS_NAME_FEEDBACK_ACTIVE = 'feedback__active';
-const CLASS_NAME_MENU_ACTIVE_OPACITY = 'menu__active-opacity';
+import { header, mainMenu } from './interactive-menu.js'
 
-const main = document.querySelector('.main');
+const CLASS_NAME_FEEDBACK_ACTIVE = 'feedback__active';
+export const CLASS_NAME_MENU_ACTIVE_OPACITY = 'menu__active-opacity';
+
+export const main = document.querySelector('.main');
 const menuFooterChatButton = document.querySelector('.menu__footer-chat');
-const feedback = document.querySelector('.feedback');
-const feedbackCloseButton = document.querySelector('.feedback__close');
+export const feedback = document.querySelector('.feedback');
+export const feedbackCloseButton = document.querySelector('.feedback__close');
 
 menuFooterChatButton.addEventListener('click', function () {
   main.classList.add(CLASS_NAME_MENU_ACTIVE_OPACITY);

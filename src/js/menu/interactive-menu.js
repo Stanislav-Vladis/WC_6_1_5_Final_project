@@ -1,9 +1,12 @@
+import { feedback, feedbackCloseButton } from './interactive-feedback.js'
+import { backCall, backCallCloseButton } from './interactive-back-call'
+
 const CLASS_NAME_MENU_ACTIVE = 'menu__active';
 
-const header = document.querySelector('.header');
+export const header = document.querySelector('.header');
 const headerBurgerButton = header.querySelector('.header__burger');
-const headerCloseButton = document.querySelector('.menu__header-close');
-const mainMenu = document.querySelector('.menu');
+const headerCloseButton = document.querySelector('.header__close');
+export const mainMenu = document.querySelector('.menu');
 
 headerBurgerButton.addEventListener('click', function () {
   header.classList.add(CLASS_NAME_MENU_ACTIVE);
