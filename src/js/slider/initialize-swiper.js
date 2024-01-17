@@ -1,3 +1,6 @@
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
+
 export function initialSwiper() {
 
   if (window.innerWidth <= 768) {

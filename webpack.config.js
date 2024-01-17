@@ -92,7 +92,7 @@ module.exports = {
          *    Он использует Node Sass, который является исполнением Sass на Node.js,
          *    чтобы скомпилировать Sass-файлы в CSS, который может быть использован в проекте.
          */
-        test: /\.scss$/,
+        test: /\.(scss|sass|less|css)$/,
         use: [
           MiniCssExtractPlugin.loader, // извлекает CSS в отдельный файл
           'css-loader', // переводит CSS в CommonJS
@@ -106,7 +106,7 @@ module.exports = {
         test: /\.(eot|ttf|woff|woff2)$/,
         use: [
           {
-            loader: 'file-loader?name=./font/TTLakes/[name].[ext]'
+            loader: 'file-loader?name=./src/font/TTLakes/[name].[ext]'
           },
         ]
       },
@@ -144,7 +144,7 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: './src/img',
-        to: 'img',
+        to: './src/img',
       },
     ])
   ],
